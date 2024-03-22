@@ -15,7 +15,7 @@ const Homepage = () => {
         {/* IMAGE CONTAINER */}
         <div className="h-1/2 lg:h-full lg:w-1/2 relative mr-4 flex justify-center items-center p-14">
           <Image
-            src="/dhpic.jpeg"
+            src="/dhpic2.jpg"
             alt=""
             className="object-contain rounded-full border-4 border-gray-700 w-40 lg:w-full"
             width={600}

@@ -3,6 +3,7 @@ import Brain from "@/components/brain";
 import { motion, useInView, useScroll } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
+import Link from "next/link";
 
 const AboutPage = () => {
   const containerRef = useRef();
@@ -31,7 +32,7 @@ const AboutPage = () => {
           <div className="flex flex-col gap-12 justify-center xl:-mt-20">
             {/* BIOGRAPHY IMAGE */}
             <Image
-              src="/dhpic2.jpg"
+              src="/dhpic.jpeg"
               alt=""
               width={112}
               height={112}
@@ -40,14 +41,24 @@ const AboutPage = () => {
             {/* BIOGRAPHY TITLE */}
             <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
             {/* BIOGRAPHY DESC */}
-            <p className="text-lg">
-              I am a front-end developer specializing in Next.js, React, and
-              front-end development. I have a solid foundation in various
-              programming languages such as C++, Python, JavaScript, TypeScript,
-              and C. <br></br>
-              Other than coding and software development, I play the piano and create unique piano covers (which can be found in my <a className="underline text-blue-800" href="youtube.com/DHsPianoLand">youtube</a>).
+            <p className="text-xl">
+              I am a software developer specializing in web development, with a
+              focus on creating unique frontend projects.
+            {/* add a newline here */}
+              <br />
+              <br />
+              Apart from coding, I
+              have a passion for playing the piano and creating distinctive
+              piano covers, which can be found on my YouTube channel{" "}
+              <Link
+                className="underline text-blue-800"
+                href="https://youtube.com/DHsPianoLand"
+              >
+                DHsPianoLand
+              </Link>
+              .
             </p>
-            
+
             {/* BIOGRAPHY SCROLL SVG */}
             <motion.svg
               initial={{ opacity: 0.2, y: 0 }}
@@ -134,7 +145,7 @@ const AboutPage = () => {
               <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
                 Framer Motion
               </div>
-              
+
               <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
                 Vite
               </div>

@@ -16,7 +16,8 @@ const TransitionProvider = ({ children }) => {
       >
         <motion.div
           className="h-screen w-screen fixed bg-black rounded-b-[100px] z-40"
-          animate={{ height: "0vh" }}
+          initial={{x:"-100vw"}}
+          animate={{ height: "0vh", x: "0vh"}}
           exit={{ height: "140vh" }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         />
@@ -27,12 +28,12 @@ const TransitionProvider = ({ children }) => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          {pathName.substring(1)}
+          {pathName === "/" ? "Home" : pathName.substring(1) }
         </motion.div>
         <motion.div
           className="h-screen w-screen fixed bg-black rounded-t-[100px] bottom-0 z-30"
           initial={{ height: "140vh" }}
-          animate={{ height: "0vh", transition: { delay: 0.5 } }}
+          animate={{ height: "0vh", x:"-100vw", transition: { delay: 0.5, duration: 0.6} }}
         />
         <div className="h-24">
           <Navbar />

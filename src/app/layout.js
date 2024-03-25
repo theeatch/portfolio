@@ -3,7 +3,6 @@ import "./globals.css";
 import TransitionProvider from "@/components/transitionProvider";
 
 const inter = Inter({ subsets: ["latin"] });
-
 export const metadata = {
   title: "DH.dev",
   description: "Dhruv Negi",

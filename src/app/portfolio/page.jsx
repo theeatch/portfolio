@@ -24,10 +24,10 @@ const items = [
   {
     id: 3,
     color: "from-violet-300 to-purple-300",
-    title: "Fundinc",
-    desc: "Collaborated with a team to develop Fundinc, a dynamic website tailored for a financial company, built with Nextjs Javascript and TailwindCSS.",
-    img: "/fundinc.png",
-    link: "https://fundinc.in",
+    title: "Diamond Estate",
+    desc: "Personal Project to create  a dynamic website tailored for a students and residents of Manipal, built with Nextjs Javascript and TailwindCSS.",
+    img: "/logos.svg",
+    link: "https://diamond-estate.vercel.app/",
   },
   {
     id: 4,
@@ -56,33 +56,41 @@ const PortfolioPage = () => {
         <div className="w-screen h-[calc(100vh-6rem)] flex items-center justify-center text-8xl text-center">
           My Work
         </div>
-        <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
+        <div className="sticky top-0 flex h-screen gap-8 items-center overflow-hidden">
           <motion.div style={{ x }} className="flex">
             <div className="h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300" />
             {items.map((item) => (
               <div
-                className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
+                className={`h-screen w-screen flex items-center  gap-8 bg-gradient-to-r ${item.color}`}
                 key={item.id}
               >
-                <div className="flex flex-col gap-8 text-white">
-                  <h1 className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl">
-                    {item.title}
-                  </h1>
+                <div className="flex w-full gap-8 justify-evenly text-white">
                   <div className="relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
                     <Image src={item.img} alt="" fill />
                   </div>
-                  <p className="w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px]">
-                    {item.desc}
-                  </p>
-                  <Link href={item.link} className="flex justify-end">
-                    <button className="p-2 text-sm md:p-4 md:text-md lg:p-8 lg:text-lg bg-white text-gray-600 font-semibold m-4 rounded">{`${item.title==='Sheet-Music' ? "in progress" : "See Demo"}`}</button>
-                  </Link>
+                  <div className="flex flex-col justify-around items-center">
+                    <h1 className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl">
+                      {item.title}
+                    </h1>
+
+                    <p className="w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px]">
+                      {item.desc}
+                    </p>
+                    <Link href={item.link} className="flex ">
+                      <button className="p-2 text-sm md:p-4 md:text-md lg:p-8 lg:text-lg bg-white text-gray-600 font-semibold m-4 rounded">{`${
+                        item.title === "Sheet-Music"
+                          ? "in progress"
+                          : "See Demo"
+                      }`}</button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
           </motion.div>
         </div>
       </div>
+
       <div className="w-screen h-screen flex flex-col gap-16 items-center justify-center text-center">
         <h1 className="text-8xl">Do you have a project?</h1>
         <div className="relative">
@@ -100,7 +108,7 @@ const PortfolioPage = () => {
             </defs>
             <text fill="#000">
               <textPath xlinkHref="#circlePath" className="text-xl">
-                Web Developer 
+                Web Developer
               </textPath>
             </text>
           </motion.svg>

@@ -42,7 +42,7 @@ const ContactPage = () => {
     >
       <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
         {/* TEXT CONTAINER */}
-        <div className="hidden h-1/2 lg:h-full lg:w-1/2 md:flex items-center justify-center text-4xl lg:text-6xl">
+        <div className="hidden h-1/2 lg:h-full lg:w-1/2 md:flex items-center justify-center text-4xl lg:text-6xl underline">
           <div>
             {text.split("").map((letter, index) => (
               <motion.span

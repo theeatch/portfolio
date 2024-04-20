@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
-
+import { SparklesCore } from "@/components/sparkles";
 const items = [
   {
     id: 1,
@@ -53,9 +53,23 @@ const PortfolioPage = () => {
       transition={{ duration: 1 }}
     >
       <div className="h-[600vh] relative" ref={ref}>
-        <div className="w-screen h-[calc(100vh-6rem)] flex items-center justify-center text-8xl text-center">
-          My Work
+      <div className="relative h-[40rem] w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
+        <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-blue-700 relative z-20  ">
+          <span className="text-red-700">My</span> Work
+        </h1>
+        <div className="w-[52rem] h-52 absolute ">
+          {/* SparklesCore */}
+          <SparklesCore
+            background="transparent"
+            minSize={0.4}
+            maxSize={1}
+            particleDensity={1600}
+            className="w-full h-full"
+            particleColor="#8a2be2"
+          />
+
         </div>
+      </div>
         <div className="sticky top-0 flex h-screen gap-8 items-center overflow-hidden">
           <motion.div style={{ x }} className="flex">
             <div className="h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300" />
@@ -68,16 +82,16 @@ const PortfolioPage = () => {
                   <div className="relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
                     <Image src={item.img} alt="" fill />
                   </div>
-                  <div className="flex flex-col justify-around items-center">
-                    <h1 className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl">
+                  <div className="flex flex-col justify-around items-center"> 
+                    <h1 className="text-[#031926] text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl text-stroke text-stroke-black">
                       {item.title}
                     </h1>
 
-                    <p className="w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px]">
+                    <p className="text-blue-900 w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px]">
                       {item.desc}
                     </p>
                     <Link href={item.link} className="flex ">
-                      <button className="p-2 text-sm md:p-4 md:text-md lg:p-8 lg:text-lg bg-white text-gray-600 font-semibold m-4 rounded">{`${
+                      <button className="hover:scale-110 duration-300 p-2 text-sm md:p-4 md:text-md lg:p-8 lg:text-xl bg-green-300 text-gray-600 font-semibold m-4 rounded">{`${
                         item.title === "Sheet-Music"
                           ? "in progress"
                           : "See Demo"
